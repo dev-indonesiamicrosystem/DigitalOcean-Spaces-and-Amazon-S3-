@@ -1,0 +1,12 @@
+var AWS = require('aws-sdk');
+
+var accessKeyId = 'accessKeyId';
+var secretAccessKey = 'secretAccessKey';
+var region = 'nyc3';  // New York region by default
+
+var spacesEndpoint = new AWS.Endpoint(region + '.digitaloceanspaces.com');
+var s3 = new AWS.S3({
+    endpoint: spacesEndpoint,
+    accessKeyId: accessKeyId,
+    secretAccessKey: secretAccessKey
+});
